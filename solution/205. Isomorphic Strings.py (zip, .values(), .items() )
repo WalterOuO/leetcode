@@ -1,0 +1,13 @@
+def isIsomorphic(self, s: str, t: str) -> bool:
+      table = {}
+      for i,j in zip(s,t):
+          if i in table:
+              if table[i] != j:
+                  return False
+          elif j in table.values():
+              for key, value in table.items():
+                  if value == j and key != i:
+                      return False
+          else:
+              table[i] = j
+      return True
