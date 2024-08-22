@@ -1,0 +1,19 @@
+def isAnagram(self, s: str, t: str) -> bool:
+      dic = {}
+      if len(s) != len(t):
+          return False
+      for i in range(len(s)):
+          if s[i] not in dic:
+              dic[s[i]] = 1           
+          else:
+              dic[s[i]] += 1
+
+      for j in range(len(t)):   #思維是：列出所有排除條件，用減法思維
+          if t[j] not in dic:
+              return False              
+          elif dic[t[j]] - 1 < 0:
+              return False
+          else:
+              dic[t[j]] -= 1 
+          
+      return True
