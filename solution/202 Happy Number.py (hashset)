@@ -1,0 +1,11 @@
+def isHappy(self, n: int) -> bool:
+      seen = set()
+      while n != 1 and n not in seen:
+          seen.add(n)
+          # num = 0
+          # for dig in str(n):
+          #     num += int(dig)**2
+          # n = num
+          digit_list = [int(digit) for digit in str(n)]
+          n = sum(digit**2 for digit in digit_list)  
+      return n == 1
