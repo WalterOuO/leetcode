@@ -1,0 +1,10 @@
+def strStr(self, haystack: str, needle: str) -> int:
+      ## Method 1: use .find()
+      return haystack.find(needle)
+
+      # ## Method 2: use substring
+      # j = len(haystack) - len(needle)  # 5-2 = 3
+      # for i in range(j+1):  # 0 1 2 3
+      #     if haystack[0+i: len(needle)+i] == needle:
+      #         return i
+      # return -1
