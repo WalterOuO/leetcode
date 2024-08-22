@@ -1,0 +1,22 @@
+def singleNumber(self, nums: List[int]) -> int:
+      # book = {}
+      # for num in nums:
+      #     book[num] = book.get(num, 0) + 1
+      #     # if num not in book:
+      #     #     book[num] = 1
+      #     # else:
+      #     #     book[num] += 1
+      # return list(book.keys())[list(book.values()).index(1)]  # 使用的原理是value的index應與key對齊
+  
+      ### XOR solutions
+      ## Solution1
+      # return functools.reduce(lambda x, y: x ^ y, nums, 0)  # 運用XOR原理，僅適用於其他數剛好都成對，不能3、5個
+      # 語法：functools.reduce(function, iterable, initializer)
+      
+      ## Solution2 (只換寫法，跟Solution1一樣)
+      total_sum = 0
+
+      for i in nums:
+          total_sum = total_sum ^ i
+          
+      return total_sum
