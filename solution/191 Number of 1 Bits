@@ -1,0 +1,12 @@
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+        two = []
+        while n >= 2:
+            two.insert(0, n % 2)
+            n = n//2
+
+        c = 1
+        for syllabus in two:
+            if syllabus == 1:
+                c += 1
+        return c
